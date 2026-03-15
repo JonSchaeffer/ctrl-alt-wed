@@ -73,6 +73,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
 
 .hero-meta span { color: var(--text); }
 
+
+
 /* ── Layout ───────────────────────────────────────────── */
 
 main {
@@ -297,9 +299,6 @@ main {
   color: var(--text-dim);
 }
 
-@media (max-width: 600px) {
-  .cal-grid { grid-template-columns: 1fr; }
-}
 
 /* ── Tips ─────────────────────────────────────────────── */
 
@@ -365,9 +364,31 @@ footer {
 
 /* ── Responsive ───────────────────────────────────────── */
 
-@media (max-width: 600px) {
-  .equip-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2rem; }
-  .data-table { font-size: 0.8rem; }
+@media (max-width: 700px) {
+  /* Hero */
+  #hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero-title { font-size: clamp(1.4rem, 8vw, 2.2rem); letter-spacing: 0.02em; }
+  .mascot { width: 80px; height: auto; }
+
+  /* Panels */
   .panel-body { padding: 1rem; }
+  .panel-header { font-size: 0.9rem; padding: 0.65rem 1rem; }
+
+  /* Game grid — 2 columns on mobile */
+  .game-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .game-card-name { font-size: 0.72rem; }
+
+  /* Tables — hide link column, shrink text */
+  .data-table { font-size: 0.78rem; }
+  .data-table th, .data-table td { padding: 0.35rem 0.5rem; }
+
+  /* Equipment */
+  .equip-grid { grid-template-columns: 1fr; }
+
+  /* Calendar */
+  .cal-grid { grid-template-columns: 1fr; }
+  .cal-heading { font-size: 0.75rem; }
+
+  /* Peekers off on mobile — too cramped */
+  .peeker { display: none; }
 }
